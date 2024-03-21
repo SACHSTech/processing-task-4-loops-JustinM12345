@@ -9,7 +9,7 @@ public class Sketch extends PApplet {
    */
   public void settings() {
 	// put your size call here
-    size(400, 400);
+    size(400,400);
   }
 
   /** 
@@ -30,12 +30,12 @@ public class Sketch extends PApplet {
     strokeWeight(2);
 
     // Vertical Lines
-    for (int intLineX = 20;intLineX <= 180; intLineX += 20){
+    for (int intLineX = width / 20;intLineX <= (width / 20) * 9; intLineX += width /20){
       line(intLineX, 0, intLineX, height / 2);
     }
 
     // Horizontal Lines
-    for (int intLineY = 20; intLineY <= 200; intLineY += 20){
+    for (int intLineY = height / 20; intLineY <= height / 2; intLineY += height / 20){
       line(0, intLineY, width / 2, intLineY);
     }
 
@@ -44,19 +44,19 @@ public class Sketch extends PApplet {
     strokeWeight(1);
 
     // Moves down to the next row
-    for (int intCircleY = 40; intCircleY <=  160; intCircleY += 30) {
+    for (int intCircleY = height / 10; intCircleY <=  (height / 20) * 8; intCircleY += (height / 40) * 3) {
       // Draws 5 circles in a row
-      for (int intCircleX = 240; intCircleX <= 360; intCircleX += 30) {
+      for (int intCircleX = (width / 20) * 12; intCircleX <= (width / 20) * 18; intCircleX += (width / 40) * 3) {
         ellipse(intCircleX, intCircleY, width / 20, height / 20);
       }
     }
 
     // Q3 Code
 
-    for (int intColumn = 0; intColumn <= 200; intColumn += 1) {
+    for (int intColumn = 0; intColumn <= width / 2; intColumn += width / 400) {
 
       // Multiply by 1.275 because 200 * 1.275 = 255 which is max for RGB
-      int intGreyScale = (int) (1.275 * intColumn);
+      int intGreyScale = (int) ((255.0 / (width / 2.0)) * intColumn);
       stroke(intGreyScale);
 
       // Drawing each line
